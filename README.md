@@ -9,3 +9,7 @@ Having the same URL in the subscriber and publisher program means that they're b
 ![Sending and Processing Event](img\sending_processing_event.jpg "Sending and Processing Event")
 
 The screenshot above shows me running `cargo run` twice on the publisher in the **left window**, which sends 5 events twice (a total of 10 messages) through the message broker, which are then received and processed by the subscriber as seen in the **right window**.
+
+![RabbitMQ Spikes](img\rabbitmq_spikes.jpg "RabbitMQ Spikes")
+
+The spikes correlate to the rate in which `cargo run` is triggered on the publisher. The purple line in particular represents `Consumer ack`, which is the rate at which messages are being acknowledged by consumers. The 3 spikes (all at 1.0/s) accurately shows the 3 times I called cargo run on the publisher that were then received and processed by the subscriber.
