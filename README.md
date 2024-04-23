@@ -5,3 +5,7 @@ Five, since there are 5 calls to `publish_event` within the main() function. Wit
 Having the same URL in the subscriber and publisher program means that they're both connecting to the same AMQP server instance. It uses the same username, the same password, and the same hostname & port number. This is done so both programs are connected to the same message broker and can communicate with one another through it.
 
 ![Running RabbitMQ](img\running_rabbitmq.jpg "Running RabbitMQ")
+
+![Sending and Processing Event](img\sending_processing_event.jpg "Sending and Processing Event")
+
+The screenshot above shows me running `cargo run` twice on the publisher in the **left window**, which sends 5 events twice (a total of 10 messages) through the message broker, which are then received and processed by the subscriber as seen in the **right window**.
